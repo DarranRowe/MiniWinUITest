@@ -10,12 +10,16 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="XamlApplication.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="XamlApplication.h" />
+    <ClInclude Include="MainWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="XamlApplication.idl" />
+    <Midl Include="MainWindow.idl" />
   </ItemGroup>
 </Project>

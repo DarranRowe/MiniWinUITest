@@ -2,6 +2,8 @@
 #include "XamlApplication.h"
 #include "XamlApplication.g.cpp"
 
+#include "MainWindow.h"
+
 namespace winrt
 {
     namespace wf = winrt::Windows::Foundation;
@@ -71,16 +73,7 @@ namespace winrt::MiniWinUITest::implementation
         auto resources = winrt::Microsoft::UI::Xaml::Controls::XamlControlsResources();
         Resources().MergedDictionaries().Append(resources);
 
-        window = winrt::Microsoft::UI::Xaml::Window();
-
-        auto c_base = winrt::Microsoft::UI::Xaml::Controls::StackPanel();
-        c_base.VerticalAlignment(winrt::Microsoft::UI::Xaml::VerticalAlignment::Center);
-        c_base.HorizontalAlignment(winrt::Microsoft::UI::Xaml::HorizontalAlignment::Center);
-        c_base.Orientation(winrt::Microsoft::UI::Xaml::Controls::Orientation::Horizontal);
-        auto c_tb = winrt::Microsoft::UI::Xaml::Controls::TextBlock();
-        c_tb.Text(L"MinWinUITest");
-        c_base.Children().Append(c_tb);
-        window.Content(c_base);
+        window = make<winrt::MiniWinUITest::implementation::MainWindow>();
 
         window.Activate();
     }
